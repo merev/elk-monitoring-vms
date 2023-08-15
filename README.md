@@ -1,1 +1,1 @@
-# elk-monitoring-vms
+# ELK Monitoring Deployment Guide
