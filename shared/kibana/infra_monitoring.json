@@ -1,0 +1,161 @@
+{
+  "version": "8.9.0",
+  "objects": [
+    {
+      "id": null,
+      "type": "dashboard",
+      "namespaces": [
+        "default"
+      ],
+      "updated_at": "2023-08-16T10:57:17.590Z",
+      "created_at": "2023-08-16T10:57:17.590Z",
+      "version": "WzE4NSwxXQ==",
+      "attributes": {
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+        },
+        "description": "",
+        "timeRestore": false,
+        "optionsJSON": "{\"useMargins\":true,\"syncColors\":false,\"syncCursor\":true,\"syncTooltips\":false,\"hidePanelTitles\":false}",
+        "panelsJSON": "[{\"version\":\"8.9.0\",\"type\":\"visualization\",\"gridData\":{\"x\":0,\"y\":0,\"w\":33,\"h\":10,\"i\":\"524caeca-faa5-4906-90fb-62d314cee5d0\"},\"panelIndex\":\"524caeca-faa5-4906-90fb-62d314cee5d0\",\"embeddableConfig\":{\"enhancements\":{}},\"panelRefName\":\"panel_524caeca-faa5-4906-90fb-62d314cee5d0\"},{\"version\":\"8.9.0\",\"type\":\"visualization\",\"gridData\":{\"x\":33,\"y\":0,\"w\":15,\"h\":20,\"i\":\"1007c512-ec7d-43d6-b2bb-58d3d3dab866\"},\"panelIndex\":\"1007c512-ec7d-43d6-b2bb-58d3d3dab866\",\"embeddableConfig\":{\"enhancements\":{}},\"panelRefName\":\"panel_1007c512-ec7d-43d6-b2bb-58d3d3dab866\"},{\"version\":\"8.9.0\",\"type\":\"visualization\",\"gridData\":{\"x\":0,\"y\":10,\"w\":33,\"h\":10,\"i\":\"c5a06e64-c894-4339-b100-8a25bcc98f81\"},\"panelIndex\":\"c5a06e64-c894-4339-b100-8a25bcc98f81\",\"embeddableConfig\":{\"enhancements\":{}},\"panelRefName\":\"panel_c5a06e64-c894-4339-b100-8a25bcc98f81\"}]",
+        "title": "Infrastructure Monitoring",
+        "version": 1
+      },
+      "references": [
+        {
+          "name": "524caeca-faa5-4906-90fb-62d314cee5d0:panel_524caeca-faa5-4906-90fb-62d314cee5d0",
+          "type": "visualization",
+          "id": "3a1cc530-3c23-11ee-8f87-6d0a17fbc837"
+        },
+        {
+          "name": "1007c512-ec7d-43d6-b2bb-58d3d3dab866:panel_1007c512-ec7d-43d6-b2bb-58d3d3dab866",
+          "type": "visualization",
+          "id": "6e5525e0-3c23-11ee-8f87-6d0a17fbc837"
+        },
+        {
+          "name": "c5a06e64-c894-4339-b100-8a25bcc98f81:panel_c5a06e64-c894-4339-b100-8a25bcc98f81",
+          "type": "visualization",
+          "id": "d459e5c0-3c22-11ee-8f87-6d0a17fbc837"
+        }
+      ],
+      "managed": false,
+      "coreMigrationVersion": "8.8.0",
+      "typeMigrationVersion": "8.9.0"
+    },
+    {
+      "id": "3a1cc530-3c23-11ee-8f87-6d0a17fbc837",
+      "type": "visualization",
+      "namespaces": [
+        "default"
+      ],
+      "updated_at": "2023-08-16T10:54:09.156Z",
+      "created_at": "2023-08-16T10:54:09.156Z",
+      "version": "WzE2NywxXQ==",
+      "attributes": {
+        "visState": "{\"title\":\"CPU Usage\",\"type\":\"area\",\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"params\":{\"field\":\"system.cpu.system.pct\",\"customLabel\":\"CPU: System\"},\"schema\":\"metric\"},{\"id\":\"2\",\"enabled\":true,\"type\":\"avg\",\"params\":{\"field\":\"system.cpu.user.pct\",\"customLabel\":\"CPU: User\"},\"schema\":\"metric\"},{\"id\":\"3\",\"enabled\":true,\"type\":\"date_histogram\",\"params\":{\"field\":\"@timestamp\",\"timeRange\":{\"from\":\"now-30m\",\"to\":\"now\"},\"useNormalizedEsInterval\":true,\"extendToTimeRange\":false,\"scaleMetricValues\":false,\"interval\":\"auto\",\"used_interval\":\"30s\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{}},\"schema\":\"segment\"},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"params\":{\"field\":\"agent.name.keyword\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":5,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"includeIsRegex\":true,\"excludeIsRegex\":true},\"schema\":\"split\"}],\"params\":{\"type\":\"area\",\"grid\":{\"categoryLines\":false},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"filter\":true,\"truncate\":100},\"title\":{},\"style\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":true,\"truncate\":100},\"title\":{\"text\":\"CPU: System\"},\"style\":{}}],\"seriesParams\":[{\"show\":true,\"type\":\"area\",\"mode\":\"stacked\",\"data\":{\"label\":\"CPU: System\",\"id\":\"1\"},\"drawLinesBetweenPoints\":true,\"lineWidth\":2,\"showCircles\":true,\"circlesRadius\":1,\"interpolate\":\"linear\",\"valueAxis\":\"ValueAxis-1\"},{\"show\":true,\"mode\":\"stacked\",\"type\":\"area\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"circlesRadius\":1,\"interpolate\":\"linear\",\"lineWidth\":2,\"valueAxis\":\"ValueAxis-1\",\"data\":{\"id\":\"2\",\"label\":\"CPU: User\"}}],\"addTooltip\":true,\"detailedTooltip\":true,\"palette\":{\"type\":\"palette\",\"name\":\"default\"},\"addLegend\":true,\"legendPosition\":\"right\",\"fittingFunction\":\"linear\",\"times\":[],\"addTimeMarker\":false,\"truncateLegend\":true,\"maxLegendLines\":1,\"radiusRatio\":9,\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#E7664C\"},\"labels\":{},\"row\":true}}",
+        "title": "CPU Usage",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        }
+      },
+      "references": [
+        {
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern",
+          "id": "c7e0560b-d26e-4191-be70-ce0f86e1be33"
+        }
+      ],
+      "managed": false,
+      "coreMigrationVersion": "8.8.0",
+      "typeMigrationVersion": "8.5.0"
+    },
+    {
+      "id": "6e5525e0-3c23-11ee-8f87-6d0a17fbc837",
+      "type": "visualization",
+      "namespaces": [
+        "default"
+      ],
+      "updated_at": "2023-08-16T10:55:36.766Z",
+      "created_at": "2023-08-16T10:55:36.766Z",
+      "version": "WzE3NiwxXQ==",
+      "attributes": {
+        "visState": "{\"title\":\"Disk Free\",\"type\":\"histogram\",\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"params\":{\"field\":\"system.fsstat.total_size.free\",\"customLabel\":\"Disk Free\"},\"schema\":\"metric\"},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"params\":{\"field\":\"agent.name.keyword\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":5,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"includeIsRegex\":true,\"excludeIsRegex\":true,\"customLabel\":\"Host\"},\"schema\":\"segment\"}],\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"filter\":true,\"truncate\":100},\"title\":{},\"style\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":true,\"truncate\":100},\"title\":{\"text\":\"Disk Free\"},\"style\":{}}],\"seriesParams\":[{\"show\":true,\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Disk Free\",\"id\":\"1\"},\"interpolate\":\"linear\",\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"lineWidth\":2,\"showCircles\":true,\"circlesRadius\":1}],\"radiusRatio\":0,\"addTooltip\":true,\"detailedTooltip\":true,\"palette\":{\"type\":\"palette\",\"name\":\"default\"},\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false,\"truncateLegend\":true,\"maxLegendLines\":1,\"labels\":{\"show\":false},\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#E7664C\"}}}",
+        "title": "Disk Free",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        }
+      },
+      "references": [
+        {
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern",
+          "id": "c7e0560b-d26e-4191-be70-ce0f86e1be33"
+        }
+      ],
+      "managed": false,
+      "coreMigrationVersion": "8.8.0",
+      "typeMigrationVersion": "8.5.0"
+    },
+    {
+      "id": "d459e5c0-3c22-11ee-8f87-6d0a17fbc837",
+      "type": "visualization",
+      "namespaces": [
+        "default"
+      ],
+      "updated_at": "2023-08-16T10:51:18.429Z",
+      "created_at": "2023-08-16T10:51:18.429Z",
+      "version": "WzE1MCwxXQ==",
+      "attributes": {
+        "visState": "{\"title\":\"RAM Usage\",\"type\":\"line\",\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"params\":{\"field\":\"system.memory.actual.used.pct\",\"customLabel\":\"RAM % Used\"},\"schema\":\"metric\"},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"params\":{\"field\":\"@timestamp\",\"timeRange\":{\"from\":\"now-30m\",\"to\":\"now\"},\"useNormalizedEsInterval\":true,\"extendToTimeRange\":false,\"scaleMetricValues\":false,\"interval\":\"auto\",\"used_interval\":\"30s\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{}},\"schema\":\"segment\"},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"params\":{\"field\":\"agent.name.keyword\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":5,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"includeIsRegex\":true,\"excludeIsRegex\":true},\"schema\":\"group\"}],\"params\":{\"type\":\"line\",\"grid\":{\"categoryLines\":false},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"filter\":true,\"truncate\":100},\"title\":{},\"style\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":true,\"truncate\":100},\"title\":{\"text\":\"RAM % Used\"},\"style\":{}}],\"seriesParams\":[{\"show\":true,\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"RAM % Used\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"lineWidth\":2,\"interpolate\":\"linear\",\"showCircles\":true,\"circlesRadius\":1}],\"addTooltip\":true,\"detailedTooltip\":true,\"palette\":{\"type\":\"palette\",\"name\":\"default\"},\"addLegend\":true,\"legendPosition\":\"right\",\"fittingFunction\":\"linear\",\"times\":[],\"addTimeMarker\":false,\"truncateLegend\":true,\"maxLegendLines\":1,\"labels\":{},\"radiusRatio\":9,\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#E7664C\"}}}",
+        "title": "RAM Usage",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        }
+      },
+      "references": [
+        {
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern",
+          "id": "c7e0560b-d26e-4191-be70-ce0f86e1be33"
+        }
+      ],
+      "managed": false,
+      "coreMigrationVersion": "8.8.0",
+      "typeMigrationVersion": "8.5.0"
+    },
+    {
+      "id": "c7e0560b-d26e-4191-be70-ce0f86e1be33",
+      "type": "index-pattern",
+      "namespaces": [
+        "default"
+      ],
+      "updated_at": "2023-08-16T10:14:13.531Z",
+      "created_at": "2023-08-16T10:14:13.531Z",
+      "version": "WzYsMV0=",
+      "attributes": {
+        "fieldAttrs": "{}",
+        "title": "metricbeat-*",
+        "timeFieldName": "@timestamp",
+        "sourceFilters": "[]",
+        "fields": "[]",
+        "fieldFormatMap": "{}",
+        "typeMeta": "{}",
+        "runtimeFieldMap": "{}",
+        "name": "metricbeat"
+      },
+      "references": [],
+      "managed": false,
+      "coreMigrationVersion": "8.8.0",
+      "typeMigrationVersion": "8.0.0"
+    }
+  ]
+}

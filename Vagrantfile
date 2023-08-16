@@ -21,14 +21,15 @@ Vagrant.configure("2") do |config|
     vm1.vm.provision "shell", path: "initial-config/logstash_install.sh"
     vm1.vm.provision "shell", path: "initial-config/kibana_install.sh"
     vm1.vm.provision "shell", path: "initial-config/heartbeat_install.sh"
-    vm1.vm.provision "shell", path: "initial-config/metricbeat_install.sh"
+    vm1.vm.provision "shell", path: "initial-config/dahboard_import.sh"
+    # vm1.vm.provision "shell", path: "initial-config/metricbeat_install.sh"
     # vm1.vm.provision "shell" do |s|
     #   s.path = "initial-config/node_exporter_install.sh"
     #   s.args = ["YES"]
     # end
     vm1.vm.provider "virtualbox" do |v|
       v.gui = false
-      v.memory = 3072
+      v.memory = 4096
       v.cpus = 2
     end
   end
@@ -41,7 +42,7 @@ Vagrant.configure("2") do |config|
     vm2.vm.synced_folder "shared/", "/shared"
     vm2.vm.provision "shell", path: "initial-config/add_hosts.sh"
     vm2.vm.provision "shell", path: "initial-config/metricbeat_install.sh"
-    vm2.vm.provision "shell", path: "initial-config/auditbeat_install.sh"
+    # vm2.vm.provision "shell", path: "initial-config/auditbeat_install.sh"
     vm2.vm.provision "shell", path: "initial-config/filebeat_install.sh"
     # vm2.vm.provision "shell", path: "initial-config/docker_install.sh"
     # vm2.vm.provision "shell" do |s|
