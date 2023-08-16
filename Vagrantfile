@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
     vm1.vm.provision "shell", path: "initial-config/logstash_install.sh"
     vm1.vm.provision "shell", path: "initial-config/kibana_install.sh"
     vm1.vm.provision "shell", path: "initial-config/heartbeat_install.sh"
-    vm1.vm.provision "shell", path: "initial-config/dahboard_import.sh"
+    vm1.vm.provision "shell", path: "initial-config/dashboard_import.sh"
     # vm1.vm.provision "shell", path: "initial-config/metricbeat_install.sh"
     # vm1.vm.provision "shell" do |s|
     #   s.path = "initial-config/node_exporter_install.sh"
