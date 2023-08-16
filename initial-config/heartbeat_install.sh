@@ -29,12 +29,6 @@ heartbeat test config
 echo "* Install the beat teamplate in Elasticsearch"
 heartbeat setup --index-management -E output.logstash.enabled=false -E 'output.elasticsearch.hosts=["localhost:9200"]'
 
-echo "* Add heartbeat configuration to logstash"
-cp /shared/logstash/heartbeat /etc/logstash/conf.d/beats.conf
-
-echo "* Restart Logstash service"
-systemctl restart logstash
-
 echo "* Start and enable heartbeat-elastic.service"
 systemctl daemon-reload
 systemctl enable --now heartbeat-elastic
